@@ -1,0 +1,15 @@
+services:
+  web: 
+    image: zhouji2018/cisc5550todoapp
+    build:
+      context: frontend
+      args:
+        api_ip: api
+    ports:
+      - '5000:5000'
+  api: 
+    image: zhouji2018/cisc5550todoapi
+    build:
+      context: backend
+    ports:
+      - '5001:5001'

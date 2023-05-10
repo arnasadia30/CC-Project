@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: cc5550-frontend
+  name: cc5550-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cc5550-frontend
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: cc5550-frontend
+    spec:
+      containers:
+      - image: zhouji2018/cisc5550todoapp
+        name: cisc5550todoapp
+        env:
+        - name: TODO_API_IP
+          value: cc5550-backend-service
+        ports:
+        - containerPort: 5000
+        resources: {}
+status: {}

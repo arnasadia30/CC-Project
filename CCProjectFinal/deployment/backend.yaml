@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: cc5550-backend
+  name: cc5550-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cc5550-backend
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: cc5550-backend
+    spec:
+      containers:
+      - image: zhouji2018/cisc5550todoapi
+        name: cisc5550todoapi
+        ports:
+        - containerPort: 5001
+        resources: {}
+status: {}
